@@ -253,9 +253,7 @@
 (defn merge-sort [a-seq]
   (if (< (count a-seq) 2)
     a-seq
-    (let [[f s] (halve a-seq)]
-      (seq-merge (merge-sort f)
-                 (merge-sort s)))))
+    (apply seq-merge (map merge-sort (halve a-seq)))))
 
 (merge-sort [])                 ;=> ()
 (merge-sort [1 2 3])            ;=> (1 2 3)
