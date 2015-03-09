@@ -212,7 +212,7 @@
   (if (or (empty? coll) (zero? n))
     '()
     (cons (first coll)
-          (my-take (- n 1) (rest coll)))))
+          (my-take (dec n) (rest coll)))))
 
 (my-take 2 [1 2 3 4]) ;=> (1 2)
 (my-take 4 [:a :b])   ;=> (:a :b)
@@ -222,7 +222,7 @@
     coll
     (if (empty? coll)
       '()
-      (my-drop (- n 1) (rest coll)))))
+      (my-drop (dec n) (rest coll)))))
 
 (my-drop 2 [1 2 3 4]) ;=> (3 4)
 (my-drop 4 [:a :b])   ;=> ()
